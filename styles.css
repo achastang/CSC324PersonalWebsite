@@ -1,0 +1,192 @@
+:root{
+    --palette-dark-teal: #005461;
+    --palette-blue: #018790;
+    --palette-teal: #00B7B5;
+    --palette-white: #F4F4F4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+}
+
+/* Nav Bar */
+
+nav {
+    background-color: var(--palette-dark-teal);
+    padding: 30px 10px;
+    position: fixed; /* always stays on screen */
+    inline-size: 100%; /* full width */
+}
+
+nav ul {
+    list-style: none; /* removes bullet points */
+    display: flex;
+    justify-content: start; /* aligns items to the left of adaptive flex box*/
+}
+
+nav ul li {
+    margin: 0 20px; /* adds space between list items */
+}
+
+nav ul li a {
+    color: var(--palette-white);
+    text-decoration: none; /* removes underline */
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 2px; /* adds space for the border to be below the page titles */
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid var(--palette-white); /* white line under page when hovering */
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid var(--palette-white); /* white line under current page */
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--palette-dark-teal);
+    text-align: center;
+    padding: 20px 0; /* height of footer background color */
+}
+
+footer a {
+    color: var(--palette-white);
+    font-size: 2rem;
+    margin: 0 25px; /* spacing between icons */
+}
+
+/* Main Content */
+
+h1 {
+    color: var(--palette-teal);
+    padding: 150px 20px 50px; /* correct positioning for h1 titles on all pages same */
+}
+
+h2{
+    padding:10px 0; /* creates space around h2 titles in cards */
+}
+
+.card { /* card class used for text chunks on all pages */
+    background-color: var(--palette-blue);
+    color: var(--palette-white);
+    padding: 40px; /* pushes words in from the edges of the card */
+    border-radius: 20px;
+    max-width: 700px;
+    margin-left: 40px;
+    width: 100%; /* fulfils max-width */
+}
+
+.card-pair { /* paired card and image on home page to keep them inline */
+    display: flex;
+    align-items: flex-start; /* allows adapting of page size */
+    gap: 150px; /* separates img and card */
+    margin-bottom: 25px;
+}
+
+img {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.grid-projects{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* creates 2 columns of equal width for project cards */
+    gap: 20px 20px;
+    margin-bottom: 20px;
+}
+
+.grid-projects .card{
+    max-width: 700px;
+    margin-left: 20px;
+}
+
+a{
+    display: inline-block; /* allows padding and margin to work on links */
+    color: var(--palette-white);
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.grid-work{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* creates 3 columns of equal width for work experience cards */
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-work .card{
+    max-width: 475px;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+h4{
+    font-size: 1.2rem;
+}
+/* Iphone layout */
+
+@media (max-width: 768px) {
+    .card-pair {
+        flex-direction: column; /* changes to single column layout on phone */
+        align-items: center;
+        gap: 20px;
+        inline-size: 95%;
+    }
+
+    img {
+        inline-size: 95%;
+        margin-top: 10px;
+    }
+
+    .card{
+        margin-left: 20px;
+        font-size: 1.2rem;
+    }
+
+    .grid-projects{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* single column again */
+    }
+
+    a{
+        font-size: 1.2rem;
+    }
+
+    .grid-projects .card{
+        inline-size: 95%;
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+
+    .grid-work{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* single column again */
+        padding: 0;
+    }
+
+    .grid-work .card{
+        inline-size: 95%;
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+
+    h4{
+        font-size: 0.8rem;
+    }
+
+    h1{
+        font-size: 2.4rem;
+    }
+}
